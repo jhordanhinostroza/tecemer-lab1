@@ -8,5 +8,4 @@ Laboratorio N.º 1 de Tecnologías Emergentes. Proyecto en Python estructurado u
 
 1. **Clonar el repositorio y acceder a la carpeta:**
    ```bash
-   git clone [https://github.com/jhordanhinostroza/tecemer-lab1.git](https://github.com/jhordanhinostroza/tecemer-lab1.git)
-   cd tecemer-lab1
+   git clonegit clone https://github.com/jhordanhinostroza/tecemer-lab1.git
