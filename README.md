@@ -1,11 +1,32 @@
 # tecemer-lab1
 
-Laboratorio N.º 1 de Tecnologías Emergentes. Proyecto en Python estructurado utilizando el formato `src` layout y configurado para instalación editable mediante `pyproject.toml`.
+Proyecto de práctica de la Semana 1 del curso Tecnologías Emergentes (ISO46B) — UNCP.
+Consume una API pública de chistes como ejercicio de configuración de entorno.
 
----
+## Instalación
 
-## Instrucciones de Instalación
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -e .
+```
 
-1. **Clonar el repositorio y acceder a la carpeta:**
-   ```bash
-   git clonegit clone https://github.com/jhordanhinostroza/tecemer-lab1.git
+## Uso
+
+```bash
+python -m tecemer_lab1.app
+```
+
+## Estructura del repositorio
+
+```
+tecemer-lab1/
+├── src/tecemer_lab1/   # código fuente
+├── pyproject.toml      # metadatos y dependencias
+├── README.md
+└── .gitignore
+```
+
+## Autor
+
+Curso: Tecnologías Emergentes (ISO46B) — Facultad de Ingeniería de Sistemas, UNCP.
