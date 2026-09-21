@@ -1,9 +1,9 @@
 # tecemer-lab1
 
-Proyecto de prÃ¡ctica de la Semana 1 del curso TecnologÃ­as Emergentes (ISO46B) â€” UNCP.
-Consume una API pÃºblica de chistes como ejercicio de configuraciÃ³n de entorno.
+Proyecto de práctica de la Semana 1 del curso Tecnologías Emergentes (ISO46B) — UNCP.
+Consume una API pública de chistes como ejercicio de configuración de entorno.
 
-## InstalaciÃ³n
+## Instalación
 
 ```bash
 python -m venv .venv
@@ -21,35 +21,35 @@ python -m tecemer_lab1.app
 
 ```
 tecemer-lab1/
-â”œâ”€â”€ src/tecemer_lab1/   # cÃ³digo fuente
-â”œâ”€â”€ pyproject.toml      # metadatos y dependencias
-â”œâ”€â”€ README.md
-â””â”€â”€ .gitignore
+├── src/tecemer_lab1/   # código fuente
+├── pyproject.toml      # metadatos y dependencias
+├── README.md
+└── .gitignore
 ```
 
 ## Autor
 
-Curso: TecnologÃ­as Emergentes (ISO46B) â€” Facultad de IngenierÃ­a de Sistemas, UNCP.
+Curso: Tecnologías Emergentes (ISO46B) — Facultad de Ingeniería de Sistemas, UNCP.
 
 
-## Flujo de datos â€” Semana 2
+## Flujo de datos — Semana 2
 
-Esta secciÃ³n documenta el pipeline de datos construido en la Semana 2 (LibrerÃ­as para Datos y AutomatizaciÃ³n).
+Esta sección documenta el pipeline de datos construido en la Semana 2 (Librerías para Datos y Automatización).
 
-**Fuente:** API pÃºblica Open-Meteo (`https://api.open-meteo.com/v1/forecast`), sin necesidad de clave de acceso. Se consulta el pronÃ³stico de 7 dÃ­as para Huancayo (latitud -12.07, longitud -75.21): temperatura mÃ¡xima, temperatura mÃ­nima y precipitaciÃ³n diaria.
+**Fuente:** API pública Open-Meteo (`https://api.open-meteo.com/v1/forecast`), sin necesidad de clave de acceso. Se consulta el pronóstico de 7 días para Huancayo (latitud -12.07, longitud -75.21): temperatura máxima, temperatura mínima y precipitación diaria.
 
-**TransformaciÃ³n:**
+**Transformación:**
 1. `clima.py` consume la API con `requests` (timeout de 5s y manejo de excepciones) y guarda la respuesta cruda en `pronostico_huancayo.json`.
-2. La misma respuesta se convierte a `pronostico_huancayo.csv` con el mÃ³dulo estÃ¡ndar `csv`.
-3. `analisis.py` carga el CSV en un DataFrame de Pandas, agrega las columnas derivadas `amplitud_termica`, `dia_lluvioso` y `categoria` (frÃ­o/templado/cÃ¡lido), y calcula un resumen agrupado por categorÃ­a con `groupby`.
+2. La misma respuesta se convierte a `pronostico_huancayo.csv` con el módulo estándar `csv`.
+3. `analisis.py` carga el CSV en un DataFrame de Pandas, agrega las columnas derivadas `amplitud_termica`, `dia_lluvioso` y `categoria` (frío/templado/cálido), y calcula un resumen agrupado por categoría con `groupby`.
 
 **Salida:**
-- `pronostico_huancayo.json` â€” respuesta cruda de la API (trazabilidad del dato original).
-- `pronostico_huancayo.csv` â€” datos tabulares sin procesar.
-- `pronostico_huancayo_procesado.csv` â€” datos con las columnas derivadas.
-- `resumen_por_categoria.csv` â€” agregaciÃ³n por categorÃ­a de temperatura.
+- `pronostico_huancayo.json` — respuesta cruda de la API (trazabilidad del dato original).
+- `pronostico_huancayo.csv` — datos tabulares sin procesar.
+- `pronostico_huancayo_procesado.csv` — datos con las columnas derivadas.
+- `resumen_por_categoria.csv` — agregación por categoría de temperatura.
 
-**CÃ³mo reproducirlo:**
+**Cómo reproducirlo:**
 ```bash
 python clima.py
 python analisis.py
