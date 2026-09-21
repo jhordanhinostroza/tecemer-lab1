@@ -18,21 +18,13 @@ try:
 except requests.exceptions.RequestException as error:
     raise SystemExit(f"No se pudo obtener el pronóstico: {error}")
 
-# Imprimir la sección daily con formato legible
 print(json.dumps(datos["daily"], indent=2, ensure_ascii=False))
 
-
-
-
-# --- Paso 2.3: Exploración del JSON ---
 print('Claves de primer nivel:', list(datos.keys()))
 print('Claves de "daily":', list(datos["daily"].keys()))
 print('Tipo de temperature_2m_max:', type(datos["daily"]["temperature_2m_max"]))
 print('Primer valor de tiempo:', datos["daily"]["time"][0])
 
-
-
-# --- Paso 2.4: Guardar JSON crudo y exportar a CSV ---
 with open("pronostico_huancayo.json", "w", encoding="utf-8") as archivo:
     json.dump(datos, archivo, ensure_ascii=False, indent=2)
 
