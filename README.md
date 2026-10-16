@@ -29,7 +29,7 @@ tecemer-lab1/
 
 ## Autor
 
-Estudiante: Hinostroza Surichaqui Jhordan Lecsmnan - 4to Semestre
+Estudiante: Hinostroza Surichaqui Jhordan Lecsman - 4to Semestre
 
 Curso: Tecnologías Emergentes (ISO46B) — Facultad de Ingeniería de Sistemas, UNCP.
 
